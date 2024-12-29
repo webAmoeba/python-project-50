@@ -1,7 +1,11 @@
 [project]
 name = "hexlet-code"
 version = "0.1.0"
-description = "Add your description here"
+description = "A project to compare file structures"
+authors = [{name = "Valera Galeev, email = <71322091+webAmoeba@users.noreply.github.com>"}]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[project.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
