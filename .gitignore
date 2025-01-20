@@ -1,0 +1,10 @@
+.venv/
+dist/
+build/
+__pycache__/
+*.pyc
+**/.DS_Store
+*.egg-info
+.coverage
+coverage.xml
+*_cache/
