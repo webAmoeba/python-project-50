@@ -18,3 +18,6 @@ run:
 
 run-h:
 	uv run python -m gendiff.scripts.gendiff -h
+
+simple:
+	gendiff tests/test_data/file1.json tests/test_data/file2.json
