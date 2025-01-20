@@ -1,6 +1,9 @@
 install:
 	uv sync
 
+build:
+	uv build
+
 i:
 	uv tool install .
 
@@ -8,10 +11,7 @@ uninstall:
 	uv tool uninstall hexlet-code
 	uv clean
 
-re:
-	uv tool uninstall hexlet-code
-	uv clean
-	uv tool install .
+re: uninstall i
 
 run:
 	uv run python -m gendiff.scripts.gendiff
