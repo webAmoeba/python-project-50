@@ -24,6 +24,9 @@ run-h:
 simple:
 	gendiff tests/test_data/file1.json tests/test_data/file2.json
 
+yml:
+	gendiff tests/test_data/file1.yml tests/test_data/file2.yaml
+
 #_______________________________________________________________________________Lint
 
 lint:
