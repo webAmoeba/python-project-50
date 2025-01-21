@@ -44,6 +44,9 @@ plain:
 plain2:
 	gendiff --format plain tests/test_data/file3.json tests/test_data/file4.json
 
+json:
+	gendiff --format json tests/test_data/file3.json tests/test_data/file4.json
+
 #_______________________________________________________________________________Lint
 
 lint:

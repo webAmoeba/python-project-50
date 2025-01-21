@@ -48,3 +48,11 @@ def test_generate_plain():
         "tests/test_data/file3.json",
         "tests/test_data/file4.json",
         "plain") == expected
+
+
+def test_generate_json():
+    expected = open("tests/expected/json1.txt").read()
+    assert generate_diff(
+        "tests/test_data/file3.json",
+        "tests/test_data/file4.json",
+        "json") == expected

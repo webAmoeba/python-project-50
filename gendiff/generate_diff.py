@@ -3,6 +3,7 @@ import json
 import yaml
 
 from gendiff.build_diff import build_diff
+from gendiff.formatters.format_json import format_json
 from gendiff.formatters.format_plain import format_plain
 from gendiff.formatters.format_stylish import format_stylish
 
@@ -39,5 +40,8 @@ def generate_diff(file1, file2, format_name="stylish"):
     elif format_name == "plain":
         plain = format_plain(diff)
         return plain
+    elif format_name == "json":
+        json = format_json(diff)
+        return json
     else:
         return "Unsupported format name"
