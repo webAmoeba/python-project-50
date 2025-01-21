@@ -27,3 +27,16 @@ def test_generate_nested_yaml_diff():
     assert generate_diff(
         "tests/test_data/file3.yaml",
         "tests/test_data/file4.json") == expected
+
+
+def test_generate_diff_empty_files():
+    assert generate_diff(
+        "tests/test_data/empty.json",
+        "tests/test_data/empty.json") == "{\n\n}"
+
+
+def test_generate_nested_empty_json():
+    expected = open("tests/expected/file3.txt").read()
+    assert generate_diff(
+        "tests/test_data/empty.json",
+        "tests/test_data/file4.json") == expected

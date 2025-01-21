@@ -21,6 +21,8 @@ run:
 run-h:
 	uv run python -m gendiff.scripts.gendiff -h
 
+#_______________________________________________________________________________Test run
+
 simple:
 	gendiff tests/test_data/file1.json tests/test_data/file2.json
 
@@ -32,6 +34,9 @@ nest:
 
 nest-yaml:
 	gendiff tests/test_data/file3.yaml tests/test_data/file4.json
+
+empty:
+	gendiff tests/test_data/empty.json tests/test_data/file4.json
 
 #_______________________________________________________________________________Lint
 

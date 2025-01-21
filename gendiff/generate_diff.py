@@ -9,9 +9,13 @@ from gendiff.formatters.format_stylish import format_stylish
 def read_file(file):
     try:
         if file.endswith(".json"):
-            return json.load(open(file))
+            with open(file, "r", encoding="utf-8") as f:
+                content = f.read().strip()
+                return json.loads(content) if content else {}
         elif file.endswith((".yaml", ".yml")):
-            return yaml.safe_load(open(file))
+            with open(file, "r", encoding="utf-8") as f:
+                content = f.read().strip()
+                return yaml.safe_load(content) if content else {}
         else:
             raise ValueError(
                 """Unsupported file format.
