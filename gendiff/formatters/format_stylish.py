@@ -30,7 +30,7 @@ def format_line(key, value, depth, prefix):
 def format_value(value, depth):
     if isinstance(value, dict):
         lines = []
-        indent = ' ' * (4 * depth - 2)
+        indent = ' ' * (4 * depth - 4)
         child_indent = ' ' * (4 * depth)
         for key, val in value.items():
             formatted_val = format_value(val, depth + 1)
