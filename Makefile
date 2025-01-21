@@ -27,6 +27,12 @@ simple:
 yml:
 	gendiff tests/test_data/file1.yml tests/test_data/file2.yaml
 
+nest:
+	gendiff tests/test_data/file3.json tests/test_data/file4.json
+
+nest-yaml:
+	gendiff tests/test_data/file3.yaml tests/test_data/file4.json
+
 #_______________________________________________________________________________Lint
 
 lint:
