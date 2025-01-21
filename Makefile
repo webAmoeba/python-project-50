@@ -38,6 +38,12 @@ nest-yaml:
 empty:
 	gendiff tests/test_data/empty.json tests/test_data/file4.json
 
+plain:
+	gendiff --format plain tests/test_data/file1.json tests/test_data/file2.json
+
+plain2:
+	gendiff --format plain tests/test_data/file3.json tests/test_data/file4.json
+
 #_______________________________________________________________________________Lint
 
 lint:

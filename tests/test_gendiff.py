@@ -40,3 +40,11 @@ def test_generate_nested_empty_json():
     assert generate_diff(
         "tests/test_data/empty.json",
         "tests/test_data/file4.json") == expected
+
+
+def test_generate_plain():
+    expected = open("tests/expected/plain1.txt").read()
+    assert generate_diff(
+        "tests/test_data/file3.json",
+        "tests/test_data/file4.json",
+        "plain") == expected
