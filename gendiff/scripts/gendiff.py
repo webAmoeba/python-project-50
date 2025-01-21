@@ -20,7 +20,7 @@ def main():
 
     file1 = args.first_file
     file2 = args.second_file
-    
+
     diff = generate_diff(file1, file2)
 
     print(diff)
