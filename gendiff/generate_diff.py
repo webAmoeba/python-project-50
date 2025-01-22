@@ -34,20 +34,21 @@ Supported formats: .json, .yaml, .yml"""
         raise RuntimeError(f"Error reading file {file}: {e}")
 
 
+def format_diff(diff, format_name):
+    if format_name == "stylish":
+        return format_stylish(diff)
+    elif format_name == "plain":
+        return format_plain(diff)
+    elif format_name == "json":
+        return format_json(diff)
+    else:
+        return "Unsupported format name"
+
+
 def generate_diff(file1, file2, format_name="stylish"):
     data1 = read_file(file1)
     data2 = read_file(file2)
 
     diff = build_diff(data1, data2)
 
-    if format_name == "stylish":
-        stylish = format_stylish(diff)
-        return stylish
-    elif format_name == "plain":
-        plain = format_plain(diff)
-        return plain
-    elif format_name == "json":
-        json = format_json(diff)
-        return json
-    else:
-        return "Unsupported format name"
+    return format_diff(diff, format_name)
