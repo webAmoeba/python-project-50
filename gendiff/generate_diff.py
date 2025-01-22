@@ -22,8 +22,14 @@ def read_file(file):
             raise ValueError(
                 """Unsupported file format.
 *--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
-Supported formats: .json, .yaml, .yml""")
-
+Supported formats: .json, .yaml, .yml"""
+            )
+    except FileNotFoundError:
+        raise RuntimeError(f"File not found: {file}")
+    except json.JSONDecodeError:
+        raise RuntimeError(f"Error decoding JSON file: {file}")
+    except yaml.YAMLError:
+        raise RuntimeError(f"Error decoding YAML file: {file}")
     except Exception as e:
         raise RuntimeError(f"Error reading file {file}: {e}")
 
