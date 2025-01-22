@@ -11,7 +11,7 @@ Welcome to the Gendiff project! This project is designed to help you compare con
 
 To run this project, you need to have the following software installed:
 
-- Python 3.12.0
+- Python >=3.12.0
 - Uv
 
 ## Installation
@@ -36,3 +36,5 @@ gendiff -h
 ```bash
 gendiff path/file1.json path/file2.yaml | file.yml
 ```
+
+[![asciicast](https://asciinema.org/a/784o2u5Nuczc1pYV25jvFEQgc.svg)](https://asciinema.org/a/784o2u5Nuczc1pYV25jvFEQgc)
