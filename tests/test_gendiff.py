@@ -1,3 +1,5 @@
+import pytest
+
 from gendiff.generate_diff import generate_diff
 
 
@@ -56,3 +58,26 @@ def test_generate_json():
         "tests/test_data/file3.json",
         "tests/test_data/file4.json",
         "json") == expected
+
+
+def test_invalid_file_format():
+    with pytest.raises(RuntimeError, match="Unsupported file format"):
+        generate_diff("tests/test_data/file1.txt", "tests/test_data/file2.txt")
+
+
+def test_file_not_found():
+    with pytest.raises(RuntimeError, match="File not found"):
+        generate_diff("tests/test_data/non_existent.json",
+                      "tests/test_data/file2.json")
+
+
+def test_invalid_json():
+    with pytest.raises(RuntimeError, match="Error decoding JSON file"):
+        generate_diff("tests/test_data/invalid.json",
+                      "tests/test_data/file2.json")
+
+
+def test_invalid_yaml():
+    with pytest.raises(RuntimeError, match="Error decoding YAML file"):
+        generate_diff("tests/test_data/invalid.yaml",
+                      "tests/test_data/file2.yaml")
